@@ -60,7 +60,7 @@ public class PermissionsActivity extends ThemedActivity
   public void onRequestPermissionsResult(
       int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    if (requestCode == STORAGE_PERMISSION) {
+    if (requestCode == STORAGE_PERMISSION || requestCode == ALL_FILES_PERMISSION) {
       if (isGranted(grantResults)) {
         Utils.enableScreenRotation(this);
         permissionCallbacks[STORAGE_PERMISSION].onPermissionGranted();

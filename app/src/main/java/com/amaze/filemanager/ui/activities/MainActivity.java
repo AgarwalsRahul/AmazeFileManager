@@ -504,7 +504,7 @@ public class MainActivity extends PermissionsActivity
 
   private void checkForExternalPermission() {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-      if (!checkStoragePermission()) {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R && !checkStoragePermission()) {
         requestStoragePermission(this, true);
       }
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
